@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Ayoniz Model United Nations</title>
+    <link rel="icon" type="image/png" href="Ayoniz mum.png">
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="https://kit.fontawesome.com/d8127306e2.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="announcement-banner">
+        Looking for volunteers/members: <a href="https://forms.gle/JFdehuUQBP2xtSNv5" target="_blank">Apply now</a>
+    </div>
+    <nav class="nav-bar">
+        <ul class="nav-links">
+            <li><a href="home.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li>
+                <a href="#">Programs</a>
+                <div class="dropdown">
+                    <a href="#">AZMUN 2025</a>
+                    <div class="sub-dropdown">
+                        <a href="schedule.html">Conference Schedule</a>
+                    </div>
+                    <a href="essay.html">International Essay Competition</a>
+                    <a href="#">Youth Policy Forum (Coming Soon)</a>
+                    <a href="#">Crisis Committees & Simulations (Coming Soon)</a>
+                    <a href="#">Health Policy Blog (Coming Soon)</a>
+                    <a href="#">Leadership Roundtable Discussions (Coming Soon)</a>
+                </div>
+            </li>
+            <li><a href="registration.html">Registration</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="Gallery.html">Gallery</a></li>
+        </ul>
+    </nav>
+
+    <header class="header">
+        <h1>About Ayoniz Model United Nations</h1>
+    </header>
+
+    <section class="section">
+        <h2 class="section-title">Our Mission</h2>
+        <div class="our-mission">
+            <p>AZMUN is a premier Model United Nations conference that brings together young leaders from across the globe to engage in meaningful debate, diplomacy, and policy-making. Our goal is to empower youth voices in solving the world's most pressing issues through innovative simulations and real-world diplomacy.</p>
+        </div>
+    </section>
+
+    <section class="founders-section">
+        <h2 class="section-title">Our Founder</h2>
+        <div class="founder-card">
+            <img src="Atharv Singh Professional .jpeg" alt="Founder Atharv Singh" class="founder-image">
+            <div class="founder-info">
+                <h3>Atharv Singh</h3>
+                <p>Founder & Secretary General</p>
+                <p>Atharv Singh dreams of AZMUN as more than just another Model United Nations—it is going to be a vibrant space where youth engage with global issues, build diplomacy skills, and make meaningful contributions to actual policy discussions.</p>
+                <p>Aside from his passion for international relations and policymaking, Atharv is keenly interested in medical sciences, with a deep desire to understand how health policies shape society. To him, both diplomacy and science are interlinked. They require critical thinking, research, and solving complex problems to bring real change to the world.</p>
+                <p>From competitive debate to global policy forums, bridging this gap has become Atharv's vision. He sees AZMUN as a space for future leaders to grapple with pressing global challenges—from healthcare crises to geopolitical tensions—working toward actionable solutions.</p>
+                <p>In Atharv's understanding, AZMUN hopes to inspire an entire generation of changemakers—students who are not only skillfully trained in the art of diplomacy but also prepared to tackle challenges at the intersection of health, technology, and global governance.</p>
+            </div>
+        </div>
+    </section>
+
+    <script src="js/footer.js"></script>
+    <script>
+        // Add scroll animation for sections
+        const sections = document.querySelectorAll('.section, .founders-section');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = 1;
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        });
+
+        sections.forEach(section => {
+            section.style.opacity = 0;
+            section.style.transform = 'translateY(20px)';
+            section.style.transition = 'all 0.5s ease-out';
+            observer.observe(section);
+        });
+
+        // Image loading animation
+        document.querySelectorAll('img').forEach(img => {
+            img.style.opacity = 0;
+            img.style.transition = 'opacity 0.5s ease-in';
+            img.onload = function() {
+                this.style.opacity = 1;
+            };
+        });
+    </script>
+</body>
+</html>

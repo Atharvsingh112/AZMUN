@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>International Essay Competition 2025 - AZMUN</title>
+    <link rel="icon" type="image/png" href="Ayoniz mum.png">
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/d8127306e2.js" crossorigin="anonymous"></script>
+    <style>
+        body, .essay-section {
+            font-family: 'Poppins', 'Helvetica Neue', Arial, sans-serif;
+            color: #111;
+        }
+        .apply-btn {
+            font-family: inherit;
+            font-size: 20px;
+            background: #1a237e;
+            color: white;
+            padding: 0.7em 1em;
+            padding-left: 0.9em;
+            display: flex;
+            align-items: center;
+            border: none;
+            border-radius: 16px;
+            overflow: hidden;
+            transition: all 0.2s;
+            cursor: pointer;
+            margin: 32px auto 0 auto;
+            box-shadow: 0 2px 8px rgba(30,35,126,0.08);
+        }
+        .apply-btn span {
+            display: block;
+            margin-left: 0.3em;
+            transition: all 0.3s ease-in-out;
+        }
+        .apply-btn svg {
+            display: block;
+            transform-origin: center center;
+            transition: transform 0.3s ease-in-out;
+        }
+        .apply-btn .svg-wrapper {
+            display: flex;
+        }
+        .apply-btn:hover .svg-wrapper {
+            animation: fly-1 0.6s ease-in-out infinite alternate;
+        }
+        .apply-btn:hover svg {
+            transform: translateX(1.2em) rotate(45deg) scale(1.1);
+        }
+        .apply-btn:hover span {
+            transform: translateX(5em);
+        }
+        .apply-btn:active {
+            transform: scale(0.95);
+        }
+        .submit-text{
+            margin: auto;
+            
+        }
+        @keyframes fly-1 {
+            from { transform: translateY(0.1em); }
+            to { transform: translateY(-0.1em); }
+        }
+        .essay-section {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 3rem 1.5rem 2rem 1.5rem;
+            background: transparent;
+        }
+        .essay-section h2, .essay-section h3, .essay-section p, .essay-section ul, .essay-section ol, .essay-section .info-row, .essay-section .contact-box, .essay-section .apply-btn, .essay-section .section-divider {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.7s, transform 0.7s;
+        }
+        .essay-section h2.visible, .essay-section h3.visible, .essay-section p.visible, .essay-section ul.visible, .essay-section ol.visible, .essay-section .info-row.visible, .essay-section .contact-box.visible, .essay-section .apply-btn.visible, .essay-section .section-divider.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .essay-section h2 {
+            color: #1a237e;
+            margin-top: 4em;
+            margin-bottom: 1.2em;
+            font-size: 2rem;
+            font-weight: 700;
+            letter-spacing: 0.01em;
+            text-align: left;
+        }
+        .essay-section h3 {
+            color: #1a237e;
+            margin-top: 2em;
+            margin-bottom: 0.7em;
+            font-size: 1.2rem;
+            font-weight: 600;
+            text-align: left;
+        }
+        .essay-section ul, .essay-section ol {
+            text-align: left;
+            margin: 0 0 1.5em 2.2em;
+            max-width: 700px;
+            line-height: 1.65;
+            font-size: 1.08em;
+        }
+        .essay-section li {
+            margin-bottom: 0.7em;
+        }
+        .essay-section .info-row {
+            display: flex;
+            gap: 2.5em;
+            background: #f5f8ff;
+            border-radius: 8px;
+            padding: 1em 1.5em;
+            margin-bottom: 3em;
+            margin-top: 1.5em;
+            font-size: 1.08em;
+            font-weight: 500;
+            justify-content: flex-start;
+            flex-wrap: wrap;
+            border: 1px solid #e0e4f6;
+        }
+        .essay-section .info-row div {
+            min-width: 220px;
+        }
+        .essay-section .section-divider {
+            height: 1px;
+            background: #e0e0e0;
+            margin: 48px 0 48px 0;
+            border: none;
+        }
+        .essay-section .contact-box {
+            background: #f8f8f8;
+            border-radius: 12px;
+            padding: 22px 18px;
+            margin-top: 4em;
+            color: #1a237e;
+            font-weight: 600;
+            font-size: 1.1em;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(30,35,126,0.04);
+        }
+        .essay-section .contact-box a {
+            color: #1a237e;
+            text-decoration: underline;
+            font-weight: 600;
+        }
+        .essay-section strong, .essay-section span.strong {
+            font-weight: 600;
+            color: #1a237e;
+        }
+        .essay-section p {
+            margin-left: 0.5em;
+            margin-right: 0.5em;
+            margin-bottom: 2em;
+            font-size: 1.13em;
+            line-height: 1.65;
+            text-align: left;
+        }
+        @media (max-width: 600px) {
+            .essay-section {
+                padding: 1.2rem 0.5rem;
+            }
+            .essay-section .info-row {
+                flex-direction: column;
+                gap: 0.7em;
+                padding: 1em 0.7em;
+            }
+            .essay-section ul, .essay-section ol {
+                margin-left: 1.2em;
+            }
+        }
+        .sub-blocks {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 32px;
+            margin-top: 8px;
+        }
+        .card, .sub-block {
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            box-sizing: border-box;
+            border-left: 5px solid #1a237e;
+            margin-bottom: 0;
+            max-width: 100%;
+        }
+        .sub-block {
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            box-sizing: border-box;
+            border-left: 5px solid #1a237e;
+            margin-bottom: 0;
+            max-width: 100%;
+        }
+        .sub-block h3 {
+            color: #1a237e;
+            font-size: 1.15rem;
+            font-weight: 700;
+            margin-bottom: 0.7em;
+            margin-top: 0;
+            letter-spacing: 0.01em;
+            display: flex;
+            align-items: center;
+            background: #f7f7f7;
+            padding: 0.5em 0.7em 0.5em 0.5em;
+            border-radius: 8px 8px 8px 8px;
+            border-left: 4px solid #ffd700;
+        }
+        .sub-block h3 .icon {
+            font-size: 1.2em;
+            margin-right: 0.5em;
+            color: #ffd700;
+            display: inline-block;
+        }
+        .sub-block ul, .sub-block p {
+            margin: 0 0 0.7em 0;
+            font-size: 0.98em;
+            line-height: 1.7;
+            color: #111;
+            text-align: left;
+        }
+        .sub-block ul {
+            padding-left: 1.2em;
+        }
+        .sub-block li {
+            margin-bottom: 0.7em;
+        }
+        .external-link-button {
+            margin-top: 1.2rem;
+            padding: 0.6rem 1.2rem;
+            background-color: #002366;
+            color: white;
+            text-align: left;
+            border-radius: 8px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: background 0.3s ease;
+            font-size: 1em;
+            width: fit-content;
+            display: inline-block;
+        }
+        .external-link-button:hover {
+            background-color: #00194d;
+        }
+        @media (max-width: 1023px) {
+            .sub-blocks {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        @media (max-width: 767px) {
+            .sub-blocks {
+                grid-template-columns: 1fr;
+                gap: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="announcement-banner">
+        Looking for volunteers/members: <a href="https://forms.gle/JFdehuUQBP2xtSNv5" target="_blank">Apply now</a>
+    </div>
+    <nav class="nav-bar">
+        <ul class="nav-links">
+            <li><a href="home.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li>
+                <a href="#">Programs</a>
+                <div class="dropdown">
+                    <a href="essay.html">International Essay Competition</a>
+                    <div class="sub-dropdown">
+                        <a href="schedule.html">Conference Schedule</a>
+                    </div>
+                                      <a href="essay.html">International Essay Competition</a>
+                    <a href="#">Youth Policy Forum (Coming Soon)</a>
+                    <a href="#">Crisis Committees & Simulations (Coming Soon)</a>
+                    <a href="#">Health Policy Blog (Coming Soon)</a>
+                    <a href="#">Leadership Roundtable Discussions (Coming Soon)</a>
+                </div>
+            </li>
+            <li><a href="registration.html">Registration</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="Gallery.html">Gallery</a></li>
+        </ul>
+    </nav>
+    <header class="header">
+        <div class="header-content">
+            <img src="Ayoniz mum.png" alt="Ayoniz MUN Logo" class="logo">
+            <h1>International Essay Competition 2025</h1>
+            <p>Submit your entry and be part of a global youth movement.</p>
+        </div>
+    </header>
+    <main>
+        <section class="essay-section">
+            <p>We invite young changemakers to express bold ideas and creative solutions through powerful essays. Please read the guidelines below before submitting.</p>
+            <div class="info-row">
+                <div><strong>Submission Deadline:</strong> 20th August 2025</div>
+                <div><strong>Results Announcement:</strong> 31st August 2025</div>
+            </div>
+           
+            <h2 class="fade-in">Submission Guidelines</h2>
+            <div class="sub-blocks">
+                <div class="sub-block themes card">
+                    <h3><span class="icon">💡</span><strong>General Themes of Topics</strong></h3>
+                    <ul>
+                        <li>Youth leadership in conflict zones and peacebuilding</li>
+                        <li>The role of youth in climate action and environmental justice</li>
+                        <li>Access to education and digital equity</li>
+
+                    </ul>
+                    <a href="AZMUN_letterhead.pdf" target="_blank" class="external-link-button">
+                      View Full List of Topics
+                    </a>
+                </div>
+                <div class="sub-block key-dates">
+                    <h3>Key Dates</h3>
+                    <h1><strong>Submission Deadline:</strong> 20th August 2025</h1>
+                    <h1><strong>Results Announcement:</strong> 31st August 2025</h1>
+                </div>
+                <div class="sub-block">
+                    <h3>Theme</h3>
+                    <p><strong>"The Power of Youth: Leading Change from the Ground Up"</strong></p>
+                </div>
+                <div class="sub-block">
+                    <h3>Eligibility</h3>
+                    <p>Youth under the age of 25 from any country</p>
+                </div>
+                <div class="sub-block">
+                    <h3>Age Categories</h3>
+                    <ul>
+                        <li>Under 13</li>
+                        <li>13–17</li>
+                        <li>18–24</li>
+                        <li>25+ (Open Youth Category)</li>
+                    </ul>
+                </div>
+                <div class="sub-block">
+                    <h3>Essay Requirements</h3>
+                    <ul>
+                        <li><strong>Word Limit:</strong> 1000–1500 words</li>
+                        <li><strong>Format:</strong> PDF or DOCX only</li>
+                        <li><strong>File Name Format:</strong> YourFirstName_YourLastName_EssayTitle.pdf</li>
+                        <li>Only one entry per participant</li>
+                        <li>Essays must be original and unpublished</li>
+                    </ul>
+                </div>
+                <div class="sub-block">
+                    <h3>Recognition</h3>
+                    <ul>
+                        <li>Winners will be featured on our Instagram page and website</li>
+                        <li>Digital certificates for all valid entries</li>
+                        <li>Top entries may receive volunteer opportunities with Ayoniz MUN</li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="section-divider" />
+            <div class="submit-text"><h1>Submit your essay now</h1></div>
+            <div style="text-align:center; margin: 0 0 56px 0;">
+                <a href="https://forms.gle/CUos7JqkjE6S6M3U6" target="_blank" rel="noopener" style="text-decoration:none;">
+                    <button class="apply-btn">
+                        <div class="svg-wrapper-1">
+                            <div class="svg-wrapper">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+                                    <path fill="none" d="M0 0h24v24H0z"></path>
+                                    <path fill="currentColor" d="M1.946 9.315c-.522-.174-.527-.455.01-.634l19.087-6.362c.529-.176.832.12.684.638l-5.454 19.086c-.15.529-.455.547-.679.045L12 14l6-8-8 6-8.054-2.685z"></path>
+                                </svg>
+                            </div>
+                        </div>
+                        <span>Submit</span>
+                    </button>
+                </a>
+            </div>
+            <hr class="section-divider" />
+            <h2 class="fade-in">Terms & Conditions</h2>
+            <ol style="margin-bottom: 2.5em;">
+                <li>The essay must be your own original work. Plagiarized or AI-generated content will be disqualified.</li>
+                <li>By submitting, you give us the right to publish your name, country, essay title, and an excerpt on our website and Instagram.</li>
+                <li>Only one entry is allowed per participant.</li>
+                <li>We reserve the right to verify age and identity if needed.</li>
+                <li>All essays must follow the given format and word count rules.</li>
+                <li>Judging is anonymous and final.</li>
+                <li>Your data will only be used for competition communication.</li>
+                <li>Selected winners may receive volunteer opportunities with Ayoniz MUN.</li>
+            </ol>
+            <div class="contact-box">
+                <p><strong>Questions?</strong> Contact us at <a href="mailto:Contactayonizmun@gmail.com">Contactayonizmun@gmail.com</a></p>
+            </div>
+        </section>
+    </main>
+    <script src="js/footer.js"></script>
+    <script>
+    // Fade-in animation for all main content blocks
+    document.addEventListener('DOMContentLoaded', function() {
+        const fadeEls = document.querySelectorAll('.essay-section h2, .essay-section h3, .essay-section p, .essay-section ul, .essay-section ol, .essay-section .info-row, .essay-section .contact-box, .essay-section .apply-btn, .essay-section .section-divider');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.2 });
+        fadeEls.forEach(el => {
+            observer.observe(el);
+        });
+    });
+    </script>
+</body>
+</html> 
