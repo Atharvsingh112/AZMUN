@@ -105,6 +105,38 @@
                 padding: 1.2rem 0.7rem 1.2rem 0.7rem;
             }
         }
+        .integrity-pdf-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+            gap: 1.2rem;
+            margin: 2.2rem 0 0.5rem 0;
+            justify-items: center;
+        }
+        .integrity-pdf-btn {
+            display: block;
+            width: 100%;
+            padding: 1.1rem 0.5rem;
+            background: #1a237e;
+            color: #fff;
+            border-radius: 10px;
+            font-weight: 600;
+            font-size: 1.08em;
+            text-align: center;
+            text-decoration: none;
+            box-shadow: 0 2px 8px rgba(30,35,126,0.08);
+            transition: background 0.2s, transform 0.2s;
+            outline: none;
+        }
+        .integrity-pdf-btn:hover, .integrity-pdf-btn:focus {
+            background: #283593;
+            transform: translateY(-2px) scale(1.03);
+        }
+        @media (max-width: 600px) {
+            .integrity-pdf-grid {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+        }
     </style>
 </head>
 <body>
@@ -156,6 +188,17 @@
                 <li><strong>Confidentiality:</strong> Any personal data or submitted content is handled responsibly and only for official purposes related to Ayoniz MUN.</li>
                 <li><strong>Leadership by Example:</strong> We train and expect our leadership team and volunteers to be role models of ethical conduct, inclusive leadership, and constructive dialogue.</li>
             </ul>
+        </section>
+        <hr class="integrity-divider" />
+        <section class="integrity-section">
+            <h2>Downloadable Integrity Resources</h2>
+            <div class="integrity-pdf-grid">
+                <a href="Code_Conduct.pdf" target="_blank" rel="noopener" class="integrity-pdf-btn" aria-label="Download Code of Conduct PDF">Code of Conduct</a>
+                <a href="Judging.pdf" target="_blank" rel="noopener" class="integrity-pdf-btn" aria-label="Download Judging Criteria PDF">Judging Criteria</a>
+                <a href="Volunteer.pdf" target="_blank" rel="noopener" class="integrity-pdf-btn" aria-label="Download Volunteer Guidelines PDF">Volunteer Guidelines</a>
+                <a href="Ethical_partticipation.pdf" target="_blank" rel="noopener" class="integrity-pdf-btn" aria-label="Download Ethical Participation PDF">Ethical Participation</a>
+                <a href="Concerns.pdf" target="_blank" rel="noopener" class="integrity-pdf-btn" aria-label="Download Reporting Concerns PDF">Reporting Concerns</a>
+            </div>
         </section>
         <hr class="integrity-divider" />
         <section class="integrity-section">
