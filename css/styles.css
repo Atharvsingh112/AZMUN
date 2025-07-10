@@ -63,6 +63,7 @@ body {
 
 .nav-links li {
     position: relative;
+    white-space: nowrap;
 }
 
 .dropdown {
