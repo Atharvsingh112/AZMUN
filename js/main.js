@@ -26,16 +26,32 @@ sections.forEach(section => {
     observer.observe(section);
 });
 
-// Sticky navigation
-const nav = document.querySelector('.nav-bar');
-const headerHeight = document.querySelector('.header').offsetHeight;
+// Mobile nav toggle (non-sticky, pushes content)
+document.addEventListener('DOMContentLoaded', () => {
+    const navBar = document.querySelector('.nav-bar');
+    if (!navBar) return;
 
-window.addEventListener('scroll', () => {
-    if (window.scrollY >= headerHeight) {
-        nav.classList.add('sticky');
-    } else {
-        nav.classList.remove('sticky');
+    // Create toggle button if not present
+    let toggle = navBar.querySelector('.nav-toggle');
+    if (!toggle) {
+        toggle = document.createElement('button');
+        toggle.className = 'nav-toggle';
+        toggle.setAttribute('aria-expanded', 'false');
+        toggle.setAttribute('aria-controls', 'primary-navigation');
+        toggle.innerHTML = '<span class="burger" aria-hidden="true"></span> Menu';
+        navBar.insertBefore(toggle, navBar.firstChild);
     }
+
+    // Ensure nav links have an id for aria-controls
+    const navLinks = navBar.querySelector('.nav-links');
+    if (navLinks && !navLinks.id) {
+        navLinks.id = 'primary-navigation';
+    }
+
+    toggle.addEventListener('click', () => {
+        const isOpen = navBar.classList.toggle('open');
+        toggle.setAttribute('aria-expanded', String(isOpen));
+    });
 });
 let currentIndex = 0;
 const images = document.querySelectorAll('.Gallery-img');
